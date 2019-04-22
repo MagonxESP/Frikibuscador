@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="row align-items-center search-form-container">
-        <img class="col-2 frikipedia-logo-small" src="{{ asset('assets/img/logo_small.jpg') }}" alt="logo de la frikipedia" />
+        <img class="col-2" src="{{ asset('assets/img/logo_small.jpg') }}" alt="logo de la frikipedia" />
         <div class="col-10">
             {{ render(controller('App\\Controller\\SearchController:searchForm')) }}
         </div>
