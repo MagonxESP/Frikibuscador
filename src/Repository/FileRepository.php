@@ -19,6 +19,14 @@ class FileRepository extends ServiceEntityRepository
         parent::__construct($registry, File::class);
     }
 
+    public function findLikeTitle($value) {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.title LIKE :value')
+            ->setParameter('value', '%' . $value . '%')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return File[] Returns an array of File objects
     //  */
