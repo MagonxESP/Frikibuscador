@@ -5,3 +5,11 @@ index:
 contenido:
     path: /contenido/{title}
     controller: App\Controller\ContentController::content
+
+search_form:
+    path: /buscar
+    controller: App\Controller\SearchController:searchForm
+
+search:
+    path: /buscar/{keywords}
+    controller: App\Controller\SearchController:search
