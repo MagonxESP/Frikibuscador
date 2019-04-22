@@ -1,1 +1,24 @@
 {% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row align-items-center search-form-container">
+        <img class="col-2 frikipedia-logo-small" src="{{ asset('assets/img/logo_small.jpg') }}" alt="logo de la frikipedia" />
+        <div class="col-10">
+            {{ render(controller('App\\Controller\\SearchController:searchForm')) }}
+        </div>
+    </div>
+    <div class="row search-results">
+        {% if results|length > 0 %}
+            {% for result in results %}
+                <div class="col-12 result">
+                    <div class="title">
+                        <a class="title-link" href="{{ result.getUrl() }}">{{ result.getTitle() }}</a>
+                    </div>
+                    <p class="summary">{{ result.getSummary() }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h1 class="col-12">Baia, parece que no hay ni cristo aqui</h1>
+        {% endif %}
+    </div>
+{% endblock %}
