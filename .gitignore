@@ -11,4 +11,5 @@
 /.idea
 /.env
 /src/Migrations/
-/public/assets/
+/public/assets/frikileaks/
+/public/assets/img/
