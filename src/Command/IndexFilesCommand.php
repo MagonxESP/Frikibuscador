@@ -120,10 +120,11 @@ class IndexFilesCommand extends Command {
                     $file->setTitle($this->getHTMLTitle($html));
                     $file->setSummary($this->getHTMLSummary($html));
                     $file->setPath($frikileaksDir . '/' . $frikileaksFile);
-                    $file->setUrl('/contenido/' . urlencode($file->getTitle()));
+                    $file->setUrl('/contenido/' . urlencode($file->getName()));
 
                     $this->entityManager->persist($file);
                     $this->entityManager->flush();
+                    $output->writeln($file->getName());
                     $indexed++;
                 }
             }

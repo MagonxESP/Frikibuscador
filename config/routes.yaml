@@ -3,7 +3,7 @@ index:
     controller: App\Controller\DefaultController::index
 
 contenido:
-    path: /contenido/{title}
+    path: /contenido/{filename}
     controller: App\Controller\ContentController::content
 
 search_form:

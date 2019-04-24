@@ -10,14 +10,17 @@ use App\Entity\File;
 
 class ContentController extends AbstractController {
 
-    public function content(string $title) {
+    public function content(string $filename) {
         $file = $this->getDoctrine()
             ->getRepository(File::class)
-            ->findOneBy(['title' => urldecode($title)]);
+            ->findOneBy(['name' => urldecode($filename)]);
 
-        $html = file_get_contents($file->getPath());
-
-        return new Response($html);
+        if ($file) {
+            $html = file_get_contents($file->getPath());
+            return new Response($html);
+        } else {
+            return new Response(null, 404);
+        }
     }
 
 }
