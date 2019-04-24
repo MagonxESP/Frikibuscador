@@ -23,10 +23,7 @@ DirectoryIndex index.php
     # Images Redirects
     RewriteRule ^images/(.*)$ /assets/frikileaks/images/$1 [L,R=301,NC]
     RewriteRule ^contenido/images/(.*)$ /assets/frikileaks/images/$1 [L,R=301,NC]
-    
-    # Content html file redirect
-    RewriteRule ^contenido/frikileaks-(.*).html$ /contenido/$1 [L,R=301,NC]
-    
+
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # project in a subdirectory, the base path will be prepended to allow proper
